@@ -14,6 +14,7 @@ function App() {
             <Routes>
               <Route path="/" element={<ConnectWallet />} />
               <Route path="/signup" element={<SignupForm />} />
+              
             </Routes>
           </RecoilRoot>
         </Auth0ProviderWithHistory>
