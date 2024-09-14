@@ -29,7 +29,7 @@ const SignupForm = () => {
         <img src={signupImg} alt=""  className="relative h-[730px] w-full flex items-center justify-center overflow-hidden "/>
       <div className="absolute bg-gray-900 rounded-3xl top-[25px] w-[1400px] right-[80px] h-[680px] overflow-hidden">
         <img src={signupImg} alt="" className="absolute w-[800px] h-[680px] rounded-3xl" />
-      <div className="absolute right-2 top-14 p-8 rounded-lg w-full max-w-md shadow-md">
+      <div className="absolute right-[70px] top-[80px] p-8 rounded-lg w-full max-w-md shadow-md">
         <h2 className="text-2xl font-bold text-white mb-6">CREATE AN ACCOUNT</h2>
         <p className="text-gray-400 mb-6">
           Already have an account?{" "}

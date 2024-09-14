@@ -43,13 +43,7 @@ const ManageNFTs = () => {
             </button>
         </div>
 
-        <div className='flex space-x-2 mt-4'>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-
-        </div>            
+       <ProductCard />    
     </div>
     <div className='absolute top-[630px] left-[365px] w-[1140px]'>
     <TransactionActivity />
