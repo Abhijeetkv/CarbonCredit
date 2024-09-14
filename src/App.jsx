@@ -1,6 +1,10 @@
 import { RecoilRoot } from 'recoil'
 import './App.css'
-import ConnectWallet from './Pages/ConnectWallet.jsx'
+import HeroSection from './Pages/heroSection.jsx'
+import TransactionPage from './Pages/TransactionPage.jsx'
+import Portfolio from './Pages/Portfolio.jsx'
+import ProjectCard from './Components/ProjectCard.jsx'
+
 
 
 
@@ -8,10 +12,18 @@ function App() {
  
   return (
     <>
-      <RecoilRoot>
-        {/* <SignupForm /> */}
+      {/* <RecoilRoot>
+        <SignupForm />
         <ConnectWallet />
-      </RecoilRoot>
+      </RecoilRoot> */}
+
+      {/* <TransactionPage /> */}
+      {/* <HeroSection /> */}
+      <Portfolio />
+      
+      {/* <ProjectCard /> */}
+
+
       
      
     </>

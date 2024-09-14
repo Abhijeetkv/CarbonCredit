@@ -96,7 +96,7 @@ const TransactionTable = () => {
           </thead>
           <tbody>
             {transactions.map((transaction, index) => (
-              <tr key={index} className="border">
+              <tr key={index} className="border text-gray-900">
                 <td className="p-3 border ">{transaction.id}
                   <span className="">
                       <img src={copy} alt="" className="w-5 h-5" />
