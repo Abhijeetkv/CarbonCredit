@@ -1,5 +1,12 @@
 import React from "react";
 import icon from "../assets/icon.png";
+import arrow from "../assets/Arrows-right-left.png";
+import wallet from "../assets/wallet.png";
+import wallet1 from "../assets/wallet1.png";
+import Token from "../assets/scan-coin.png";
+import Frame from "../assets/Frame.png";
+import copy from "../assets/copy.png";
+import eye from "../assets/eye.png";
 
 const TransactionTable = () => {
   const transactions = [
@@ -61,26 +68,57 @@ const TransactionTable = () => {
                 <p className="pl-7">TransactionID</p>
                 </th>
               <th className="p-3 relative">
-              <img src={icon} alt="" className=" w-5 absolute" /> 
+              <img src={arrow} alt="" className=" w-5 absolute" /> 
               <p className="pl-7">Type</p>
                 
                 </th>
-              <th className="p-3">From</th>
-              <th className="p-3">To</th>
-              <th className="p-3">Token</th>
-              <th className="p-3">Tnx ;
-                Fees</th>
+                <th className="p-3 relative">
+              <img src={wallet} alt="" className=" w-5 absolute" /> 
+              <p className="pl-7">From</p>
+                
+                </th>
+                <th className="p-3 relative">
+              <img src={wallet1} alt="" className=" w-5 absolute" /> 
+              <p className="pl-7">To</p>
+                
+                </th>
+                <th className="p-3 relative">
+              <img src={Token} alt="" className=" w-5 absolute" /> 
+              <p className="pl-7">Token</p>
+                
+                </th>
+                <th className="p-3 relative">
+              <img src={Frame} alt="" className=" w-5 absolute" /> 
+              <p className="pl-7">Tnx Fees</p>
+                
+                </th>
             </tr>
           </thead>
           <tbody>
             {transactions.map((transaction, index) => (
               <tr key={index} className="border">
-                <td className="p-3 border">{transaction.id}</td>
+                <td className="p-3 border ">{transaction.id}
+                  <span className="">
+                      <img src={copy} alt="" className="w-5 h-5" />
+                  </span>
+                </td>
                 <td className="p-3 border">{transaction.type}</td>
-                <td className="p-3 border">{transaction.from}</td>
-                <td className="p-3 border">{transaction.to}</td>
+                <td className="p-3 border">{transaction.from}
+                <span className="">
+                      <img src={copy} alt="" className="w-5 h-5" />
+                  </span>
+                </td>
+                <td className="p-3 border">{transaction.to}
+                <span className="">
+                      <img src={copy} alt="" className="w-5 h-5" />
+                  </span>
+                </td>
                 <td className="p-3 border">{transaction.token}</td>
-                <td className="p-3 border">{transaction.fees}</td>
+                <td className="p-3 border ">{transaction.fees}
+                  <span className="">
+                      <img src={eye} alt="" className="w-5 h-5" />
+                  </span>
+                </td>
               </tr>
             ))}
           </tbody>

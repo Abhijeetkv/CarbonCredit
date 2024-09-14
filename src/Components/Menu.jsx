@@ -11,11 +11,15 @@ const Menu = () => {
       <ul>
         <li className="flex items-center py-2 hover:bg-gray-100 rounded-md">
           <svg className="w-6 h-6 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m0 0l-7 7-7-7" /></svg>
-          Dashboard
+          MarketPlace
         </li>
         <li className="flex items-center py-2 hover:bg-gray-100 rounded-md">
           <img src={portfolio} alt="" className='text-gray-500 mr-2' />
           Portfolio
+        </li>
+        <li className="flex items-center py-2 hover:bg-gray-100 rounded-md">
+          <img src="https://static-00.iconduck.com/assets.00/transaction-icon-512x410-663ridss.png" alt="" className='text-gray-500 mr-2 w-5 h-5' />
+            Transactions
         </li>
         <li className="flex items-center py-2 hover:bg-gray-100 rounded-md">
           <img src={Notification} alt="" className='text-gray-500 mr-2 w-6 h-6' />

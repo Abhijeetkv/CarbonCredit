@@ -3,7 +3,7 @@ import React from 'react'
 function TransactionActivity() {
   return (
     <>
-    <div className='bg-gray-100 p-4 rounded-2xl pb-4'>
+    <div className='bg-gray-100 p-4 mt-5 rounded-2xl pb-4'>
         <h1 className=' text-black text-7xl'>Transaction Activity</h1>
         <div className="bg-white h-[250px] mt-3 rounded-3xl">
             <p className='p-8 text-3xl'>Carbon Limits</p>
