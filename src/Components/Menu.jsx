@@ -26,7 +26,6 @@ const Menu = () => {
             Setting
         </li>
       </ul>
-      <ProductCard />
     </div>
   );
 };

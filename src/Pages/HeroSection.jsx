@@ -10,7 +10,7 @@ function heroSection() {
       <div>
       <ManageNfts />
       </div>
-      <div className='absolute top-5 left-5'>
+      <div className=' top-5 left-5 fixed'>
         <AceMarketplace />
         <Menu />
       </div>

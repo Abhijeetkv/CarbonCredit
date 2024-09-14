@@ -13,6 +13,7 @@ function AceMarketplace() {
           <div className="text-gray-600">Version</div>
         </div>
       </div>
+
     </div>
   );
 }

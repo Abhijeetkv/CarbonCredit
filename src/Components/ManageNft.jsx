@@ -1,5 +1,7 @@
 import React from 'react';
 import ProductCard from './ProductCard';
+import TransactionActivity from './TransactionActivity';
+import TransactionTable from './TransactionTable';
 
 const ManageNFTs = () => {
   return (
@@ -47,10 +49,12 @@ const ManageNFTs = () => {
             <ProductCard />
             <ProductCard />
 
-        </div>
+        </div>            
+    </div>
+    <div className='absolute top-[630px] left-[365px] w-[1140px]'>
+    <TransactionActivity />
+    <TransactionTable />
 
-            
-      
     </div>
     </div>
     </>
