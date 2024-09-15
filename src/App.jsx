@@ -4,6 +4,7 @@ import ConnectWallet from './Pages/ConnectWallet.jsx';
 import Auth0ProviderWithHistory from './auth0Provider.jsx';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import SignupForm from './Pages/SignUp.jsx';
+
 import ProjectCard from './Components/ProjectCard.jsx';
 import TokenPage from './Pages/TokenPage.jsx';
 import Portfolio from './Pages/Portfolio.jsx';
@@ -15,15 +16,18 @@ import ProjectComponent from './Components/ProjectComponent.jsx';
 import PaymentPage from './Pages/PaymentPage.jsx';
 
 
+
 function App() {
   return (
     <>
+<<<<<<< HEAD
 
 
       <PaymentPage />
+=======
+>>>>>>> 4f2f0a042a05cf476153c7cd403669910534e6b5
       {/* <TokenPage /> */}
-      {/* <MintTokenComponent /> */}
-      {/* <MintToken /> */}
+
 
       {/* <Portfolio /> */}
       {/* <MintToken /> */}
@@ -32,7 +36,7 @@ function App() {
 
       {/* <ProjectComponent /> */}
      
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Auth0ProviderWithHistory>
           <RecoilRoot>
             <Routes>
@@ -40,10 +44,11 @@ function App() {
               <Route path="/signup" element={<SignupForm />} />
               <Route path='/transaction' element={<TransactionPage></TransactionPage>}></Route>
               <Route path='/hero' element={<HeroSection></HeroSection>}></Route>
+              <Route path='/mintToken' element={<MintToken></MintToken>}></Route>
             </Routes>
           </RecoilRoot>
         </Auth0ProviderWithHistory>
-      </BrowserRouter> */}
+      </BrowserRouter> 
 
     </>
   );
