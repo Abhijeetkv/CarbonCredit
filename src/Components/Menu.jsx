@@ -17,10 +17,7 @@ const Menu = () => {
           <img src={portfolio} alt="" className='text-gray-500 mr-2' />
           Portfolio
         </li>
-        <li className="flex items-center py-2 hover:bg-gray-100 rounded-md">
-          <img src="https://static-00.iconduck.com/assets.00/transaction-icon-512x410-663ridss.png" alt="" className='text-gray-500 mr-2 w-5 h-5' />
-            Transactions
-        </li>
+        
         <li className="flex items-center py-2 hover:bg-gray-100 rounded-md">
           <img src={Notification} alt="" className='text-gray-500 mr-2 w-6 h-6' />
             Notification

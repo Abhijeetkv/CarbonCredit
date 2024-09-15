@@ -46,8 +46,7 @@ const ManageNFTs = () => {
        <ProductCard />    
     </div>
     <div className='absolute top-[630px] left-[365px] w-[1140px]'>
-    <TransactionActivity />
-    <TransactionTable />
+    
 
     </div>
     </div>
