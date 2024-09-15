@@ -23,12 +23,7 @@ const ProjectVerification = () => {
 
   return (
     <>
-
-
-
-
-
-    <div className='relative rounded-3xl bg-white mt-10 shadow'>
+ <div className='relative rounded-3xl bg-white mt-10 shadow'>
 
     <div className="mt-12 pt-8 px-4">
           <div className="flex gap-8">

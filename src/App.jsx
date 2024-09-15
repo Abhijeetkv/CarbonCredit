@@ -12,6 +12,7 @@ import Herosection from './Pages/heroSection.jsx';
 import MintTokenComponent from './Components/MintTokenComponent.jsx';
 import TransactionPage from './Pages/TransactionPage.jsx';
 import ProjectComponent from './Components/ProjectComponent.jsx';
+import PaymentPage from './Pages/PaymentPage.jsx';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
     <>
 
 
-
+      <PaymentPage />
       {/* <TokenPage /> */}
       {/* <MintTokenComponent /> */}
       {/* <MintToken /> */}
@@ -27,7 +28,7 @@ function App() {
       {/* <Portfolio /> */}
       {/* <MintToken /> */}
 
-      <Herosection />
+      {/* <Herosection /> */}
 
       {/* <ProjectComponent /> */}
      
