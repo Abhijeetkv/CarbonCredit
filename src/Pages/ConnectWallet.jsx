@@ -9,7 +9,7 @@ function ConnectWallet() {
   const [walletAddress, setWalletAddress] = useRecoilState(WalletAddressAtom);
   const [isConnecting, setIsConnecting] = useState(false);
   const [error, setError] = useState("");
-  const navigate = useNavigate()
+  
 
   const connectWallet = useCallback(async () => {
     if (typeof window.ethereum !== "undefined") {
@@ -87,14 +87,7 @@ function ConnectWallet() {
             </div>
 
             <div className='flex items-center justify-center'>
-              <button onClick={()=>{
-                if(!error && walletAddress){
-                  navigate('/hero')
-                }
-                else{
-                  alert('Please connect wallet')
-                }
-              }} className="bg-gray-700 text-white py-2 px-6 mt-6 w-[300px] h-[50px] rounded-2xl hover:bg-gray-600">
+              <button className="bg-gray-700 text-white py-2 px-6 mt-6 w-[300px] h-[50px] rounded-2xl hover:bg-gray-600">
                 Continue
               </button>
             </div>
