@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useNavigate } from "react";
 import signupImg from '../assets/SignupImg.jpg';
 import Phantom from '../assets/phantom.png';
 import metaMask from '../assets/metamask.png';
@@ -9,6 +9,7 @@ function ConnectWallet() {
   const [walletAddress, setWalletAddress] = useRecoilState(WalletAddressAtom);
   const [isConnecting, setIsConnecting] = useState(false);
   const [error, setError] = useState("");
+  const navigate = useNavigate()
 
   const connectWallet = useCallback(async () => {
     if (typeof window.ethereum !== "undefined") {
@@ -40,6 +41,8 @@ function ConnectWallet() {
       alert("MetaMask is not installed. Please install it to use this app.");
     }
   }, [isConnecting]);
+
+
 
   return (
     <>
@@ -84,7 +87,14 @@ function ConnectWallet() {
             </div>
 
             <div className='flex items-center justify-center'>
-              <button className="bg-gray-700 text-white py-2 px-6 mt-6 w-[300px] h-[50px] rounded-2xl hover:bg-gray-600">
+              <button onClick={()=>{
+                if(!error && walletAddress){
+                  navigate('/hero')
+                }
+                else{
+                  alert('Please connect wallet')
+                }
+              }} className="bg-gray-700 text-white py-2 px-6 mt-6 w-[300px] h-[50px] rounded-2xl hover:bg-gray-600">
                 Continue
               </button>
             </div>

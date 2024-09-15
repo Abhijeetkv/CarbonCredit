@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import signupImg from "../assets/SignupImg.jpg";
 import { useAuth0 } from "@auth0/auth0-react";
 import { WalletAddressAtom } from "../atom";
