@@ -20,12 +20,7 @@ import PaymentPage from './Pages/PaymentPage.jsx';
 function App() {
   return (
     <>
-<<<<<<< HEAD
 
-
-      <PaymentPage />
-=======
->>>>>>> 4f2f0a042a05cf476153c7cd403669910534e6b5
       {/* <TokenPage /> */}
 
 
