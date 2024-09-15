@@ -2,6 +2,7 @@ import React from 'react';
 import ProductCard from './ProductCard';
 import TransactionActivity from './TransactionActivity';
 import TransactionTable from './TransactionTable';
+import ProjectComponent from './ProjectComponent';
 
 const ManageNFTs = () => {
   return (
@@ -25,9 +26,21 @@ const ManageNFTs = () => {
         
         <div className='flex text-white pt-10 space-x-4'>
             <button className='bg-gray-700 w-[220px]  h-[50px] px-5 rounded-3xl'>
-                <span className="">Sort by &nbsp;  ∣ &nbsp;  &nbsp;</span>
-                <span className=''>Price &nbsp; &nbsp; &nbsp;</span>
+            <label for="underline_select" class="sr-only">Underline select</label>
+            <span className="">Token &nbsp;  ∣ &nbsp;  &nbsp;</span>
+            <select id="underline_select" class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                  <option selected>Carbon Offset</option>
+                  <option value="US">Carbon</option>
+                  
+              </select>
                 <span className=''> ⌄ </span>
+
+              <select id="underline_select" class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                  <option selected>Carbon Offset</option>
+                  <option value="US">United States</option>
+                  
+              </select>
+                
             </button>
 
             <button className='bg-gray-700 w-[220px]  h-[50px] px-5 rounded-3xl'>
@@ -45,8 +58,8 @@ const ManageNFTs = () => {
 
        <ProductCard />    
     </div>
-    <div className='absolute top-[630px] left-[365px] w-[1140px]'>
-    
+    <div className='absolute top-[690px] left-[365px] w-[1140px]'>
+    <ProjectComponent />
 
     </div>
     </div>
