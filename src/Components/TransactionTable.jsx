@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import icon from "../assets/icon.png";
 import arrow from "../assets/Arrows-right-left.png";
 import wallet from "../assets/wallet.png";
@@ -7,56 +7,25 @@ import Token from "../assets/scan-coin.png";
 import Frame from "../assets/Frame.png";
 import copy from "../assets/copy.png";
 import eye from "../assets/eye.png";
+import axios from "axios"
 
 const TransactionTable = () => {
-  const transactions = [
-    {
-      id: "0xa91172edd1dbeac...",
-      type: "trade",
-      from: "0xc2eB5...f5Dec7ab5",
-      to: "0xc2eB5...f5Dec7ab5",
-      token: 50,
-      fees: 0.00203338,
-      description: "Renewable Energy",
-    },
-    {
-      id: "0xa91172edd1d5caa...",
-      type: "offset",
-      from: "0xc2eB5...f5Dec7ab5",
-      to: "0xc2eB5...f5Dec7ab5",
-      token: 75,
-      fees: 0.00203338,
-      description: "Afforestation",
-    },
-    {
-      id: "0xa9117d1dbeac5ca...",
-      type: "offset",
-      from: "0xc2eB5...f5Dec7ab5",
-      to: "0xc2eB5...f5Dec7ab5",
-      token: 100,
-      fees: 0.00203338,
-      description: "Carbon Capture",
-    },
-    {
-        id: "0xa91172edd1dbeac...",
-        type: "trade",
-        from: "0xc2eB5...f5Dec7ab5",
-        to: "0xc2eB5...f5Dec7ab5",
-        token: 50,
-        fees: 0.00203338,
-        description: "Renewable Energy",
-      },
-      {
-        id: "0xa91172edd1dbeac...",
-        type: "trade",
-        from: "0xc2eB5...f5Dec7ab5",
-        to: "0xc2eB5...f5Dec7ab5",
-        token: 50,
-        fees: 0.00203338,
-        description: "Renewable Energy",
-      },
-  ];
+  const [transactions ,setTranasactions] = useState([])
 
+  useEffect(() => {
+    const fetchTransactions = async () => {
+      try {
+        const response = await axios.get("http://localhost:3001/transactions/userTransactions");
+        setTransactions(response.data);  // Update state with API response data
+      } catch (error) {
+        console.error("Error fetching transactions", error);
+      }
+    };
+    
+    fetchTransactions(); // Call the async function
+  }, []);
+
+ 
   return (
     <div className="container mx-auto mt-4">
       <div className="overflow-x-auto rounded-2xl">
@@ -95,7 +64,7 @@ const TransactionTable = () => {
             </tr>
           </thead>
           <tbody>
-            {transactions.map((transaction, index) => (
+            {transactions && transactions.map((transaction, index) => (
               <tr key={index} className="border text-gray-900">
                 <td className="p-3 border ">{transaction.id}
                   <span className="">
@@ -113,8 +82,8 @@ const TransactionTable = () => {
                       <img src={copy} alt="" className="w-5 h-5" />
                   </span>
                 </td>
-                <td className="p-3 border">{transaction.token}</td>
-                <td className="p-3 border ">{transaction.fees}
+                <td className="p-3 border">{transaction.totalTokens}</td>
+                <td className="p-3 border ">{transaction.amount}
                   <span className="">
                       <img src={eye} alt="" className="w-5 h-5" />
                   </span>

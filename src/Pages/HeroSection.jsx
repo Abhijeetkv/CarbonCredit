@@ -3,7 +3,7 @@ import ManageNfts from '../Components/ManageNft'
 import AceMarketplace from '../Components/AceMarketPlace'
 import Menu from '../Components/Menu'
 
-function heroSection() {
+function HeroSection() {
   return (
     <>
     <div className='relative'>
@@ -19,4 +19,4 @@ function heroSection() {
   )
 }
 
-export default heroSection
+export default HeroSection
