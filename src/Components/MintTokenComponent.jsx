@@ -1,13 +1,21 @@
+
 import React, { useEffect, useState } from 'react';
 import ethereum from '../assets/ethereum.png';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
+import { ProjectId , Vintage, Country, Price, ProjectName, TotalCredits, AvailableCredits } from '../atom';
 
 const ProjectVerification = () => {
-  const [projectId, setProjectId] = useState('');
-  const [availableToken, setAvailableToken] = useState('');
-  const [vintage, setVintage] = useState('');
-  const [country, setCountry] = useState('');
-  const [price, setPrice] = useState('');
+  const [projectId, setProjectId] = useRecoilState(ProjectId);
+  const [availableToken, setAvailableToken] = useRecoilState(AvailableCredits);
+  const [vintage, setVintage] = useRecoilState(Vintage);
+  const [country, setCountry] = useRecoilState(Country);
+  const [price, setPrice] = useRecoilState(Price);
+  const [totalCredits,setTotalCredits] = useRecoilState(TotalCredits);
+  const [availableCredits,setAvailableCredits] = useRecoilState(AvailableCredits)
+
+  const [projectName,setProjectName] = useRecoilState(ProjectName);
   const [shouldVerify, setShouldVerify] = useState(false); // New state to trigger verification
 
   const handleProjectIdChange = (event) => {
@@ -15,6 +23,7 @@ const ProjectVerification = () => {
   };
 
   const handleContinue = () => {
+    navigate('/transaction')
     console.log('Continuing with Project ID:', projectId);
   };
 
@@ -31,6 +40,10 @@ const ProjectVerification = () => {
           setVintage(response.data.vintage);
           setCountry(response.data.region);
           setPrice(response.data.price);
+          setProjectName(response.data.projectName);
+          setTotalCredits(response.data.numberOfCredits);
+          setAvailableCredits(response.data.availableCredits);
+
         } catch (error) {
           console.error('Error fetching project data:', error);
         }
@@ -40,6 +53,7 @@ const ProjectVerification = () => {
       setShouldVerify(false); // Reset the trigger after the verification is complete
     }
   }, [shouldVerify, projectId]);
+  const navigate = useNavigate();
 
   return (
     <div>
