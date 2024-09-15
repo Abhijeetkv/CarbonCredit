@@ -1,13 +1,13 @@
 import React from 'react'
+import RetirementForm from '../Components/RetirementForm'
 import AceMarketplace from '../Components/AceMarketPlace'
 import Menu from '../Components/Menu'
-import PaymentComponent from '../Components/PaymentComponent'
 
 
-function PaymentPage() {
+function RetirePage() {
   return (
-    <>
-    <div className=' top-5 left-5 fixed'>
+        <>
+                <div className=' top-5 left-5 fixed'>
         <AceMarketplace />
         <Menu />
         </div>
@@ -39,10 +39,10 @@ function PaymentPage() {
        </div>
 
        <div className="absolute right-[220px] top-[240px]">
-       <PaymentComponent /> 
+         <RetirementForm />
        </div>
-    </>
+        </>
   )
 }
 
-export default PaymentPage
+export default RetirePage

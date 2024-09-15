@@ -9,11 +9,10 @@ import ProjectCard from './Components/ProjectCard.jsx';
 import TokenPage from './Pages/TokenPage.jsx';
 import Portfolio from './Pages/Portfolio.jsx';
 import MintToken from './Pages/MintToken.jsx';
-import Herosection from './Pages/heroSection.jsx';
-import MintTokenComponent from './Components/MintTokenComponent.jsx';
+
 import TransactionPage from './Pages/TransactionPage.jsx';
-import ProjectComponent from './Components/ProjectComponent.jsx';
 import PaymentPage from './Pages/PaymentPage.jsx';
+import RetirePage from './Pages/RetirePage.jsx';
 
 
 
@@ -21,17 +20,11 @@ function App() {
   return (
     <>
 
-      {/* <TokenPage /> */}
+     {/* <PaymentPage /> */}
 
-
-      {/* <Portfolio /> */}
-      {/* <MintToken /> */}
-
-      {/* <Herosection /> */}
-
-      {/* <ProjectComponent /> */}
+     <RetirePage />
      
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Auth0ProviderWithHistory>
           <RecoilRoot>
             <Routes>
@@ -43,7 +36,7 @@ function App() {
             </Routes>
           </RecoilRoot>
         </Auth0ProviderWithHistory>
-      </BrowserRouter> 
+      </BrowserRouter>  */}
 
     </>
   );

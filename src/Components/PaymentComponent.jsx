@@ -1,5 +1,6 @@
 import React from 'react'
 import ethereum from '../assets/ethereum.png'
+import PaymentSuccessfull from './PaymentSuccessfull'
 
 
 function PaymentComponent() {
@@ -43,8 +44,9 @@ function PaymentComponent() {
 
 
 <div className=' border-b-2 pt-6 mx-6'></div>
+
 <div className="container mx-auto w-[800px] p-8">
-  
+   <PaymentSuccessfull />
 </div>
 </div>
 
