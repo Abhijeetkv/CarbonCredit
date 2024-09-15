@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import signupImg from "../assets/SignupImg.jpg";
 import { useAuth0 } from "@auth0/auth0-react";
+import { WalletAddressAtom } from "../atom";
 
 const SignupForm = () => {
-  const { loginWithRedirect, logout, user, isLoading } = useAuth0(); // Correct destructuring
+  const { loginWithRedirect, logout, user, isLoading } = useAuth0();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -25,6 +26,33 @@ const SignupForm = () => {
     // Add form submission logic here
     console.log(formData);
   };
+
+    useEffect(() => {
+    if (user) {
+      const sendUserDataToBackend = async () => {
+        try {
+          const userData = {
+            Name: user.given_name || formData.firstName,
+            lastName: user.family_name || formData.lastName,
+            email: user.email,
+            auth0Id: user.sub,
+            WalletAddress : WalletAddressAtom
+
+          };
+
+          const token =await axios.post("http://localhost:3001/users/register", userData);
+          if(token){
+            localStorage.setItem("token" , token)
+          }
+          console.log("User data sent to backend");
+        } catch (error) {
+          console.error("Error sending user data to backend", error);
+        }
+      };
+
+      sendUserDataToBackend();
+    }
+  }, [user]); 
 
   return (
     <div className="min-h-screen">
