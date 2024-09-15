@@ -87,7 +87,9 @@ function ConnectWallet() {
             </div>
 
             <div className='flex items-center justify-center'>
-              <button className="bg-gray-700 text-white py-2 px-6 mt-6 w-[300px] h-[50px] rounded-2xl hover:bg-gray-600">
+              <button onClick={()=>{
+                window.location.href = '/mintToken';
+              }} className="bg-gray-700 text-white py-2 px-6 mt-6 w-[300px] h-[50px] rounded-2xl hover:bg-gray-600">
                 Continue
               </button>
             </div>

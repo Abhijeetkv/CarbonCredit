@@ -8,20 +8,42 @@ import Frame from "../assets/Frame.png";
 import copy from "../assets/copy.png";
 import eye from "../assets/eye.png";
 import axios from "axios"
+import { useRecoilState, useRecoilValue } from "recoil";
+import { AvailableCredits, Country, Price, TotalCredits } from "../atom";
 
 const TransactionTable = () => {
   const [transactions ,setTranasactions] = useState([])
+  const location = useRecoilValue(Country)
+  const amount = useRecoilValue(Price)
+  const totalCredits = useRecoilValue(TotalCredits)
+  const availableCredits = useRecoilValue(AvailableCredits)
 
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/transactions/userTransactions");
-        setTransactions(response.data);  // Update state with API response data
+        const response = await axios.post("http://localhost:3000/contract/mint",{
+          origin : location,
+          certificationStandard : "Verra",
+          environmentalImpact : "1000",
+          price : amount,
+        });
+        setTranasactions(response.data);  // Update state with API response data
       } catch (error) {
         console.error("Error fetching transactions", error);
       }
     };
     
+    const updatedb = async () => {
+      await axios.post("http://localhost:3001/createTransaction",{
+      transactionId : response.data.txHash,
+      type : "Trade",
+      from : response.data.receipt.from,
+      to : response.data.receipt.to,
+      transactionfee : ".05%",
+      token : parseInt(totalCredits) - parseInt(availableCredits),
+    })
+  }
+    updatedb();
     fetchTransactions(); // Call the async function
   }, []);
 
