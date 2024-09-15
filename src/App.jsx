@@ -7,24 +7,25 @@ import SignupForm from './Pages/SignUp.jsx';
 import MintToken from './Pages/MintToken.jsx';
 
 import TransactionPage from './Pages/TransactionPage.jsx';
+
 import HeroSection from './Pages/HeroSection.jsx';
 import AceMarketplace from './Components/AceMarketPlace.jsx';
+
+import PaymentPage from './Pages/PaymentPage.jsx';
+import RetirePage from './Pages/RetirePage.jsx';
+
 
 
 
 function App() {
   return (
     <>
-      {/* <TokenPage /> */}
 
 
-      {/* <Portfolio /> */}
-      {/* <MintToken /> */}
 
-
-      {/* <ProjectComponent /> */}
+     <RetirePage />
      
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Auth0ProviderWithHistory>
           <RecoilRoot>
             <Routes>
@@ -37,7 +38,7 @@ function App() {
             </Routes>
           </RecoilRoot>
         </Auth0ProviderWithHistory>
-      </BrowserRouter> 
+      </BrowserRouter>  */}
 
     </>
   );
